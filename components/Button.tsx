@@ -6,7 +6,7 @@ type ButtonProps = {
   icon?: string;
   variant: string;
   full?: boolean;
-  onClick: (e: React.MouseEvent<HTMLElement>) => void;
+  onClick?: (e: React.MouseEvent<HTMLElement>) => void;
 };
 
 const Button = ({ type, title, icon, variant, full, onClick }: ButtonProps) => {

@@ -1,10 +1,15 @@
+"use client";
 import { NAV_LINKS } from "@/constants";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "./Button";
 import AuthButton from "./AuthButton";
+import Hamburger from "./Hamburger";
+import { useSession } from "next-auth/react";
 
 const Navbar = () => {
+  const { data: session } = useSession();
+
   return (
     <nav className="flexBetween max-container padding-container relative z-30 py-5">
       <Link href="/">
@@ -21,15 +26,11 @@ const Navbar = () => {
           </Link>
         ))}
       </ul>
-      <AuthButton />
+      <div className="flex items-center">
+        <AuthButton />
+      </div>
 
-      <Image
-        src="menu.svg"
-        alt="menu"
-        width={32}
-        height={32}
-        className="inline-block cursor-pointer lg:hidden"
-      />
+      <Hamburger />
     </nav>
   );
 };
