@@ -3,7 +3,7 @@
 import React from "react";
 import Image from "next/image";
 import { useState } from "react";
-import { NAV_LINKS } from "@/constants";
+import { NAV_LINKS } from "@/src/constants";
 
 const Hamburger = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -13,13 +13,13 @@ const Hamburger = () => {
   };
 
   return (
-    <div className="relative">
+    <div className="relative lg:hidden">
       <Image
         src="menu.svg"
         alt="menu"
         width={32}
         height={32}
-        className="inline-block cursor-pointer lg:hidden padding-conatiner"
+        className="inline-block cursor-pointer  padding-conatiner"
         onClick={handleClick}
       />
       {isOpen && (
