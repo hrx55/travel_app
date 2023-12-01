@@ -167,3 +167,7 @@ body {
 .arrow-white {
   filter: grayscale(100%) brightness(0) invert(100%);
 }
+
+.icon-custom-style {
+  border-radius: 50%;
+}
