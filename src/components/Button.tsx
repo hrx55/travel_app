@@ -7,18 +7,9 @@ type ButtonProps = {
   variant: string;
   full?: boolean;
   onClick?: (e: React.MouseEvent<HTMLElement>) => void;
-  iconClassName?: string;
 };
 
-const Button = ({
-  type,
-  title,
-  icon,
-  variant,
-  full,
-  onClick,
-  iconClassName,
-}: ButtonProps) => {
+const Button = ({ type, title, icon, variant, full, onClick }: ButtonProps) => {
   return (
     <button
       className={`flexCenter gap-3 rounded-full border ${variant} ${
@@ -27,7 +18,15 @@ const Button = ({
       type={type}
       onClick={onClick}
     >
-      {icon && <Image src={icon} alt={title} width={24} height={24} />}
+      {icon && (
+        <Image
+          src={icon}
+          alt={title}
+          width={24}
+          height={24}
+          className="rounded-full"
+        />
+      )}
       <label className="bold-16 whitespace-nowrap cursor-pointer">
         {title}
       </label>

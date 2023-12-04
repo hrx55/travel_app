@@ -43,7 +43,6 @@ export default function AuthButton() {
             icon={session.user.image || "/user.svg"}
             variant="btn_dark_green"
             onClick={handleLogout}
-            iconClassName="ronuded-full"
           />
         ) : (
           <Button
